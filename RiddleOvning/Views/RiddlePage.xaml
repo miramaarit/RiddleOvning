@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RiddleOvning.Views.RiddlePage"
+             Title="Riddles"
+             Padding=" 30"
+             
+             >
+
+    <VerticalStackLayout
+        Padding="30"
+        Spacing=" 25">
+      
+
+        <Button Text="Hämta gåta"
+                HorizontalOptions="Center"
+                Clicked="OnClickedGetRiddle"/>
+
+        <ListView ItemsSource="{Binding TheRiddle}" ItemSelected="OnClickedGetAnswer">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10"
+                      RowDefinitions="Auto, *"
+                      ColumnDefinitions="200, *"
+                      ColumnSpacing="20">
+                           
+                          <Label Text="{Binding Title}"
+                           FontSize="32"></Label>
+                            <Label Grid.Row="1" Grid.Column="1"
+                           Text="{Binding Question}"
+                           FontSize="15"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+      
+        
+       
+
+
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
